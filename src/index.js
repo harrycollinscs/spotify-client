@@ -9,7 +9,7 @@ import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Playlists from "./components/pages/Playlists";
 import Songs from "./components/pages/Songs";
-import { logIn, getUser } from "./helpers";
+import { logIn } from "./helpers";
 import store from "./store";
 
 const navigationLinks = [

@@ -17,6 +17,7 @@ const StyledNavBar = styled.nav`
   align-items: center;
   text-align: center;
   justify-content: space-between;
+  z-index: 1000;
 `;
 
 const BrandAndLinksContainer = styled.div`
