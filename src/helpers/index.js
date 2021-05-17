@@ -13,8 +13,8 @@ export const getTokenFromHash = (key) => {
 };
 
 export const getUser = (store, token) => {
-  const Spotify = new SpotifyWebApi();
-  Spotify.setAccessToken(token);
+  // const Spotify = new SpotifyWebApi();
+  // Spotify.setAccessToken(token);
 
   axios
     .get(me_endpoint, {

@@ -1,13 +1,13 @@
 import React from "react";
-import store from "../../../store";
 import Page from "../../atoms/Page";
 
-const Home = ({ isLoggedIn, user }) => {
+const Home = ({ user }) => {
+  console.log(user)
   return (
     <Page>
       {
         user ? 
-        <p>Hey user</p> :
+        <p>Hey, {user.id}!</p> :
         <p>Welcome back!</p>
 
       }
