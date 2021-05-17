@@ -1,17 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router-dom";
+import { connect, Provider } from "react-redux";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavigationBar from "./components/molecules/NavBar/index";
 import Artists from "./components/pages/Artists";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Playlists from "./components/pages/Playlists";
 import Songs from "./components/pages/Songs";
-import { getTokenFromHash } from "./helpers";
+import { logIn, getUser } from "./helpers";
 import store from "./store";
-import { setAccessToken, updateLoggedInStatus } from "./store/actions";
 
 const navigationLinks = [
   {
@@ -32,31 +31,12 @@ const getComponent = Page => {
   return store.getState().isLoggedIn ? Page : Login;
 }
 
-const checkAndUpdateLogin = () => {
-  const token = getTokenFromHash('access_token');
-
-  if(token) {
-    store.dispatch(setAccessToken(token));
-    store.dispatch(updateLoggedInStatus(true));
-    console.log(store.getState());
-  };
-}
-
-
 const App = () => {
-
-  useEffect(() => {
-    console.log('useeffect')
-    checkAndUpdateLogin();
-  }, []);
-
-  checkAndUpdateLogin();
-
-  console.log('after userfefect')
+  logIn(store);
 
   return (
     <Router>
-      <NavigationBar links={navigationLinks} />
+      <NavigationBar links={navigationLinks} isLoggedIn={false}/>
       <Switch>
         <Route exact path="/" component={getComponent(Home)} />
         <Route exact path="/songs" component={getComponent(Songs)} />
@@ -67,9 +47,17 @@ const App = () => {
   );
 };
 
+const mapStateToProps = () => ({
+  isLoggedIn: store.getState().isLoggedIn,
+  user: store.getState().user,
+});
+
+const WrappedApp = connect(mapStateToProps)(App);
+
+
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
+  <Provider store={store} user={store.getState().user}>
+    <WrappedApp />
   </Provider>,
   document.getElementById("root")
 );

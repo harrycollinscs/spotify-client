@@ -5,6 +5,7 @@ import { updateLoggedInStatus } from '../../../store/actions';
 
 const mapStateToProps = () => ({
   isLoggedIn: store.getState().isLoggedIn,
+  user: store.getState().user,
 });
 
 const mapDispatchToProps = dispatch => ({

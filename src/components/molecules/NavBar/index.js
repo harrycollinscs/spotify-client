@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CircleImage from "../../atoms/CircleImage";
+import store from "../../../store";
 
 const StyledNavBar = styled.nav`
   width: 100%;
@@ -14,6 +16,12 @@ const StyledNavBar = styled.nav`
   flex-direction: row;
   align-items: center;
   text-align: center;
+  justify-content: space-between;
+`;
+
+const BrandAndLinksContainer = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 const BrandLogoContainer = styled.span`
@@ -58,13 +66,15 @@ const IconStyle = {
   width: '25px',
 };
 
-const NavigationBar = ({ links }) => {
+const NavigationBar = ({ links, isLoggedIn }) => {
+
   return (
     <StyledNavBar>
+      <BrandAndLinksContainer style={{display:'flex', flexDirection: 'row'}}>
       <Link to="/" style={{ textDecoration: 'none' }} >
         <BrandLogoContainer>
-        <StyledBrand>Statify</StyledBrand>
-        <FontAwesomeIcon icon={faCompactDisc} style={IconStyle}/>
+          <StyledBrand>Statify</StyledBrand>
+          <FontAwesomeIcon icon={faCompactDisc} style={IconStyle}/>
         </BrandLogoContainer>
       </Link>
       <StyledNavLinks>
@@ -80,6 +90,8 @@ const NavigationBar = ({ links }) => {
           </StyledListItem>
         ))}
       </StyledNavLinks>
+      </BrandAndLinksContainer>
+      { store.getState().user && <CircleImage style={{float:'right'}} url={store.getState().user.images[0].url}/>}
     </StyledNavBar>
   );
 };

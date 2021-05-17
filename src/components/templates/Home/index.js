@@ -1,10 +1,16 @@
 import React from "react";
+import store from "../../../store";
 import Page from "../../atoms/Page";
 
-const Home = props => {
+const Home = ({ isLoggedIn, user }) => {
   return (
     <Page>
-      <p>Welcome back!</p>
+      {
+        user ? 
+        <p>Hey user</p> :
+        <p>Welcome back!</p>
+
+      }
     </Page>
   );
 };
