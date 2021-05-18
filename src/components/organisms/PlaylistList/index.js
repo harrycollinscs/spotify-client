@@ -3,7 +3,6 @@ import styled from "styled-components";
 import PlaylistCard from "../../molecules/PlaylistCard";
 
 const List = styled.div`
-  margin: 0px 20px;
   list-style: none;
 `;
 

@@ -1,4 +1,4 @@
-import { SET_ACCESS_TOKEN, SET_USER, UPDATE_LOGGED_IN_STATUS, UPDATE_USER_PLAYLISTS } from "./actionTypes";
+import { SET_ACCESS_TOKEN, SET_USER, UPDATE_LOGGED_IN_STATUS, UPDATE_USER_PLAYLISTS, UPDATE_TOP_TRACKS } from "./actionTypes";
 
 export function setUser(payload) {
   return { type: SET_USER, payload }
@@ -14,5 +14,9 @@ export function setAccessToken(payload) {
 
 export function updateUserPlaylists(payload) {
   return { type: UPDATE_USER_PLAYLISTS, payload }
+};
+
+export function updateTopTracks(payload) {
+  return { type: UPDATE_TOP_TRACKS, payload }
 };
 

@@ -1,10 +1,11 @@
-import { UPDATE_LOGGED_IN_STATUS, SET_ACCESS_TOKEN, SET_USER, UPDATE_USER_PLAYLISTS } from "../actions/actionTypes";
+import { UPDATE_LOGGED_IN_STATUS, SET_ACCESS_TOKEN, SET_USER, UPDATE_USER_PLAYLISTS, UPDATE_TOP_TRACKS } from "../actions/actionTypes";
 
 const initialState = {
   user: null,
   isLoggedIn: false,
   accessToken: null,
   userPlaylists: [],
+  userTopTracks: [],
 };
 
 function rootReducer(state = initialState, action) {
@@ -25,6 +26,16 @@ function rootReducer(state = initialState, action) {
     case UPDATE_USER_PLAYLISTS:
       return Object.assign({}, state, {
         userPlaylists: [...state.userPlaylists, ...action.payload]
+      });
+
+    case UPDATE_USER_PLAYLISTS:
+      return Object.assign({}, state, {
+        userPlaylists: [...state.userPlaylists, ...action.payload]
+      });
+
+    case UPDATE_TOP_TRACKS:
+      return Object.assign({}, state, {
+        userTopTracks: [...state.userTopTracks, ...action.payload]
       });
   }
 

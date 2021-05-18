@@ -38,8 +38,8 @@ const ButtonAction = () => {
   window.location.href = full_auth_url;
 };
 
-const Login = (props) => (
-  <Page>
+const Login = props => (
+  <Page withNavigation={false} darkBackground={true}>
     <Container>
       <StyledImage src={VinylImage} />
       <StyledHeroText>Hey there! Sign in to see more.</StyledHeroText>

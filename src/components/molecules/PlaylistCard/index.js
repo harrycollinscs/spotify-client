@@ -4,8 +4,8 @@ import styled from "styled-components";
 const Card = styled.div`
   background-color: #212121;
   width: 400px;
-  height: 100px;
-  border-radius: 10px;
+  height: 80px;
+  border-radius: 5px;
   color: white;
   display: flex;
   flex-direction: row;
@@ -13,9 +13,9 @@ const Card = styled.div`
 `;
 
 const StyledImage = styled.img`
-  height: 100px;
-  width: 100px;
-  border-radius: 10px 0px 0px 10px;
+  height: 80px;
+  width: 80px;
+  border-radius: 5px 0px 0px 5px;
 `;
 
 const StyledTextContainer = styled.div`

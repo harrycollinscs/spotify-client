@@ -36,7 +36,6 @@ const App = () => {
 
   return (
     <Router>
-      <NavigationBar links={navigationLinks} isLoggedIn={false}/>
       <Switch>
         <Route exact path="/" component={getComponent(Home)} />
         <Route exact path="/songs" component={getComponent(Songs)} />
