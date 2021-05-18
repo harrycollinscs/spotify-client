@@ -3,11 +3,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { connect, Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import NavigationBar from "./components/molecules/NavBar/index";
+import NavigationBar from "./components/organisms/NavBar/index";
 import Artists from "./components/pages/Artists";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Playlists from "./components/pages/Playlists";
+import Playlist from "./components/pages/Playlist";
 import Songs from "./components/pages/Songs";
 import { logIn } from "./helpers";
 import store from "./store";
@@ -41,6 +42,8 @@ const App = () => {
         <Route exact path="/songs" component={getComponent(Songs)} />
         <Route exact path="/artists" component={getComponent(Artists)} />
         <Route exact path="/playlists" component={getComponent(Playlists)} />
+        <Route path="/playlists/:id" component={getComponent(Playlist)} />
+
       </Switch>
     </Router>
   );

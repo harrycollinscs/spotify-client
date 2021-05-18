@@ -9,17 +9,11 @@ const List = styled.div`
 const PlaylistList = ({ playlists }) => {
   return (
     <List>
-      {
-        playlists.map(playlist => (
-          <li>
-            <PlaylistCard 
-              imageUrl={playlist.images[0] && playlist.images[0].url}
-              playlistName={playlist.name}
-              action={() => console.log('hi')}  
-            />
-          </li>
-        ))
-      }
+      {playlists.map((playlist) => (
+        <li>
+          <PlaylistCard playlist={playlist} />
+        </li>
+      ))}
     </List>
   );
 };

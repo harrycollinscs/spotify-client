@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Card = styled.div`
@@ -25,14 +26,19 @@ const StyledTextContainer = styled.div`
   text-align; center;
 `;
 
-const PlaylistCard = ({ imageUrl, playlistName, action }) => {
+const PlaylistCard = ({ playlist }) => {
+  const imageUrl = playlist.images[0] && playlist.images[0].url;
+  const path = `/playlists/${playlist.id}`;
+
   return (
-    <Card onClick={action}>
-      <StyledImage src={imageUrl} />
-      <StyledTextContainer>
-        <p>{playlistName}</p>
-      </StyledTextContainer>
-    </Card>
+    <Link to={path} style={{ textDecoration: 'none' }}>
+      <Card>
+        <StyledImage src={imageUrl} />
+        <StyledTextContainer>
+          <p>{playlist.name}</p>
+        </StyledTextContainer>
+      </Card>
+    </Link>
   );
 };
 

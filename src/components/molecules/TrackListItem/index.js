@@ -23,7 +23,9 @@ const Divider = styled.div`
   height: 2px;
 `;
 
-const TrackListItem = ({ name, artists }) => {
+const TrackListItem = ({ track }) => {
+  const { name, artists } = track;
+  
   const allArtists = artists
     .map((artist) => {
       return artist.name;

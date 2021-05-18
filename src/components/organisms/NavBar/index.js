@@ -77,35 +77,29 @@ const NavigationBar = ({ links }) => {
 
   return (
     <StyledNavBar>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <BrandLogoContainer>
+          <StyledBrand>Statify</StyledBrand>
+          <FontAwesomeIcon icon={faCompactDisc} style={IconStyle} />
+        </BrandLogoContainer>
+      </Link>
 
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <BrandLogoContainer>
-            <StyledBrand>Statify</StyledBrand>
-            <FontAwesomeIcon icon={faCompactDisc} style={IconStyle} />
-          </BrandLogoContainer>
-        </Link>
-
-        <StyledNavLinks>
-          {links.map((link) => (
-            <StyledListItem key={link.title}>
-              <NavLink
-                to={`${link.route}`}
-                style={NavLinkInactiveStyle}
-                activeStyle={NavLinkActiveStyle}
-              >
-                {link.title}
-              </NavLink>
-            </StyledListItem>
-          ))}
-        </StyledNavLinks>
+      <StyledNavLinks>
+        {links.map((link) => (
+          <StyledListItem key={link.title}>
+            <NavLink
+              to={`${link.route}`}
+              style={NavLinkInactiveStyle}
+              activeStyle={NavLinkActiveStyle}
+            >
+              {link.title}
+            </NavLink>
+          </StyledListItem>
+        ))}
+      </StyledNavLinks>
 
       <IconContainer>
-        {user && (
-          <CircleImage
-            style={{ position: "absolute", bottom: 0 }}
-            url={store.getState().user.images[0].url}
-          />
-        )}
+        {user && <CircleImage url={store.getState().user.images[0].url} />}
       </IconContainer>
     </StyledNavBar>
   );

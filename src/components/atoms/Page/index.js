@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import NavigationBar from "../../molecules/NavBar";
+import NavigationBar from "../../organisms/NavBar";
 
 const Container = styled.div`
   display; flex:

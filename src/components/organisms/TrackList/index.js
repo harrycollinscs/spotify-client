@@ -12,7 +12,7 @@ const TrackList = ({ tracks }) => {
       {
         tracks.map(track => (
           <li>
-            <TrackListItem name={track.name} artists={track.artists}/>
+            <TrackListItem track={track} />
           </li>
         ))
       }
