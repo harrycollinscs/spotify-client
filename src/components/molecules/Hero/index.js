@@ -18,7 +18,7 @@ const StyledContent = styled.p`
   color: white;
 `;
 
-const Hero = ({ title, content }) => (
+const Hero = ({ title = "", content = "" }) => (
   <HeroContainer>
     <StyledTitle>{title}</StyledTitle>
     <StyledContent>{content}</StyledContent>

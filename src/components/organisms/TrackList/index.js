@@ -6,18 +6,14 @@ const List = styled.div`
   list-style: none;
 `;
 
-const TrackList = ({ tracks }) => {
-  return (
-    <List>
-      {
-        tracks.map(track => (
-          <li>
-            <TrackListItem track={track} />
-          </li>
-        ))
-      }
-    </List>
-  );
-};
+const TrackList = ({ tracks }) => (
+  <List>
+    {tracks.map((track) => (
+      <li>
+        <TrackListItem track={track} />
+      </li>
+    ))}
+  </List>
+);
 
 export default TrackList;

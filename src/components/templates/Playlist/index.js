@@ -1,8 +1,10 @@
+import axios from "axios";
 import React, { PureComponent } from "react";
-// import { getPlaylist } from "../../../api/playlists";
+import styled from "styled-components";
+import { base_api_url } from "../../../config";
+import store from "../../../store";
 import Page from "../../atoms/Page";
 import Hero from "../../molecules/Hero";
-import styled from 'styled-components';
 import TrackList from "../../organisms/TrackList";
 
 const ContentContainer = styled.div`
@@ -17,26 +19,43 @@ const StyledTitle = styled.h2`
 class Playlist extends PureComponent {
   state = {
     playlist: null,
+  };
+
+  getPlaylist(playlistId) {
+    const playlistEndpoint = `${base_api_url}/playlists/${playlistId}`;
+
+    axios
+      .get(playlistEndpoint, {
+        headers: {
+          Authorization: "Bearer " + store.getState().accessToken,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        this.setState({ playlist: res.data });
+        console.log(this.state.playlist.tracks);
+      });
   }
 
   componentDidMount() {
-    // const { playlistId } = this.props;
-    // getPlaylist(playlistId);
+    const { id } = this.props.match.params;
+    this.getPlaylist(id);
   }
 
   render() {
-    const { playlistId } = this.props;
+    const playlist = this.state.playlist;
 
     return (
       <Page>
-        <Hero title="Playlist name" content="playlist description"/>
-          <ContentContainer>
-            {/* <StyledTitle>Most played tracks</StyledTitle> */}
-            {/* {
-            this.state.playlist ? <TrackList tracks={userTopTracks} /> : (
-              <p style={{ color: "black" }}>No tracks found</p>
-            )} */}
-          </ContentContainer>
+        <Hero title={playlist?.name} content={playlist?.description} />
+        <ContentContainer>
+          <StyledTitle>Tracks</StyledTitle>
+          {this.state.playlist ? (
+            <TrackList tracks={playlist.tracks.items} />
+          ) : (
+            <p style={{ color: "black" }}>No tracks found</p>
+          )}
+        </ContentContainer>
       </Page>
     );
   }
