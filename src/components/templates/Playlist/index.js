@@ -31,9 +31,7 @@ class Playlist extends PureComponent {
         },
       })
       .then((res) => {
-        console.log(res);
         this.setState({ playlist: res.data });
-        console.log(this.state.playlist.tracks);
       });
   }
 
@@ -51,7 +49,7 @@ class Playlist extends PureComponent {
         <ContentContainer>
           <StyledTitle>Tracks</StyledTitle>
           {this.state.playlist ? (
-            <TrackList tracks={playlist.tracks.items} />
+            <TrackList tracks={playlist.tracks.items} playlistId={playlist.id}/>
           ) : (
             <p style={{ color: "black" }}>No tracks found</p>
           )}

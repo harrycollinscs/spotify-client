@@ -12,7 +12,7 @@ export const getMyPlaylists = async (offset = 0) => {
         Authorization: 'Bearer ' + store.getState().accessToken,
       },
       limit: 20,
-      offset: offset,
+      offset: 10,
     }
   ).then(
     res => { 
