@@ -47,7 +47,7 @@ class Playlist extends PureComponent {
 
     return (
       <Page>
-        <Hero title={playlist?.name} content={playlist?.description} />
+        <Hero title={playlist?.name} content={playlist?.description} withBackButton={true} />
         <ContentContainer>
           <StyledTitle>Tracks</StyledTitle>
           {this.state.playlist ? (
