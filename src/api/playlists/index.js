@@ -1,22 +1,37 @@
-import axios from 'axios';
-import { me_endpoint } from '../../config';
-import store from '../../store';
-import { updateUserPlaylists } from '../../store/actions';
+import axios from "axios";
+import { me_endpoint } from "../../config";
+import store from "../../store";
+import { updateUserPlaylists } from "../../store/actions";
 
 export const getMyPlaylists = async (offset = 0) => {
   const playlistsEndpoint = `${me_endpoint}/playlists`;
-  axios.get(
-    playlistsEndpoint,
-    {
+  axios
+    .get(playlistsEndpoint, {
       headers: {
-        Authorization: 'Bearer ' + store.getState().accessToken,
+        Authorization: "Bearer " + store.getState().accessToken,
       },
-      limit: 20,
-      offset: 10,
-    }
-  ).then(
-    res => { 
-      store.dispatch(updateUserPlaylists(res.data.items))
-      return res.data }
-  );
-}
+      params: {
+        limit: 40,
+        offset: offset,
+      },
+    })
+    .then((res) => {
+      store.dispatch(updateUserPlaylists(res.data.items));
+      return res.data;
+    });
+};
+
+export const playPlaylist = async (id) => {
+  axios
+    .put("http://localhost:3001/playSong", {
+      headers: {
+        Authorization: "Bearer " + store.getState().accessToken,
+      },
+      context_uri: `spotify:playlist:${id}`,
+      offset: 0,
+    })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((e) => console.log(e));
+};

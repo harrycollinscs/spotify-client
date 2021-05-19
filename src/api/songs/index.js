@@ -3,7 +3,7 @@ import { me_endpoint } from "../../config";
 import store from "../../store";
 import { updateTopTracks } from "../../store/actions";
 
-export const getMyTopTracks = async (offset) => {
+export const getMyTopTracks = async (offset = 0) => {
   const topTracksEndpoint = `${me_endpoint}/top/tracks`;
   console.log("Getting top tracks");
 
@@ -12,8 +12,10 @@ export const getMyTopTracks = async (offset) => {
       headers: {
         Authorization: "Bearer " + store.getState().accessToken,
       },
-      limit: 30,
-      offset: offset,
+      params: {
+        limit: 30,
+        offset: offset,
+      }
     })
     .then((res) => {
       store.dispatch(updateTopTracks(res.data.items));

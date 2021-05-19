@@ -1,10 +1,7 @@
-import React from "react";
-import styled from "styled-components";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
-import { me_endpoint } from "../../../config";
-import store from "../../../store";
+import React from "react";
+import styled from "styled-components";
 import { playTrack } from "../../../api/songs";
 
 const Item = styled.div`
@@ -72,8 +69,6 @@ const getTrack = (track) => {
 
 const TrackListItem = ({ track, offset, playlistId = null, albumId = null }) => {
   const { name, artists, album } = getTrack(track);
-
-  console.log(offset);
 
   const playPayload = {
     type: playlistId ? 'playlist' : 'album',

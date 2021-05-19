@@ -17,7 +17,7 @@ const StyledTitle = styled.h2`
 class Songs extends PureComponent {
   componentDidMount() {
     const { userTopTracks } = this.props;
-    getMyTopTracks(userTopTracks.length);
+    getMyTopTracks();
   }
 
   locale = {

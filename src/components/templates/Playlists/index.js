@@ -12,7 +12,8 @@ const ContentContainer = styled.div`
 const PlaylistsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  background-color: black;
+  border-radius: 5px;
 `;
 
 const StyledTitle = styled.h2`
@@ -23,7 +24,7 @@ const StyledTitle = styled.h2`
 class Playlists extends PureComponent {
   componentDidMount() {
     const { userPlaylists } = this.props;
-    getMyPlaylists(userPlaylists.length);
+    getMyPlaylists();
   }
 
   locale = {
@@ -43,7 +44,7 @@ class Playlists extends PureComponent {
           {userPlaylists ? (
             <PlaylistsContainer>
               <PlaylistList playlists={userPlaylists.splice(0, halfLength)} />
-              <PlaylistList playlists={userPlaylists.splice(-halfLength)} />
+               {/* <PlaylistList playlists={userPlaylists.splice(-halfLength)} /> */}
             </PlaylistsContainer>
           ) : (
             <p>No data available</p>
