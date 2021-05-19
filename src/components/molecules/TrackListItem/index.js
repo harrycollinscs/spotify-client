@@ -73,6 +73,8 @@ const getTrack = (track) => {
 const TrackListItem = ({ track, offset, playlistId = null, albumId = null }) => {
   const { name, artists, album } = getTrack(track);
 
+  console.log(offset);
+
   const playPayload = {
     type: playlistId ? 'playlist' : 'album',
     id: playlistId ? playlistId : albumId,

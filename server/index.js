@@ -2,6 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 const request = require("request");
+const fetch = require("node-fetch");
 
 const port = 3001;
 const app = express();
@@ -30,44 +31,36 @@ app.use(function (req, res, next) {
 });
 app.use(express.json());
 
-app.put("/playSong", function (req, res) {
+app.put("/playSong", function (req, response) {
   const endpoint = "https://api.spotify.com/v1/me/player/play";
 
   const auth = req.body.headers.Authorization;
   const { context_uri, offset } = req.body;
 
-  request(
-    {
-      method: 'PUT',
-      uri: endpoint,
-      headers: {
-        Authorization: auth,
-      },
-      context_uri: context_uri,
-      offset: offset,
+  const body = {
+    context_uri: context_uri,
+    offset: {
+      position: offset,
     },
-    function (error, response, body) {
-      console.log(response);
-      console.log(body)
+    position_ms: 0,
+  };
 
-      // console.log(body);
-    }
-  );
+  console.log(context_uri);
 
-  // axios
-  //     .put(endpoint, {
-  //       headers: {
-  //         "Authorization": auth,
-  //       },
-  //       context_uri: context_uri,
-  //       offset: offset,
-  //     })
-  //     .then((response) => {
-  //       // console.log(response)
-  //     })
-  //     .catch((err) => {
-  //       console.log(err)
-  //     })
+  fetch(endpoint, {
+    method: "put",
+    body: JSON.stringify(body),
+    headers: {
+      Authorization: auth,
+      "Content-Type": "application/json",
+    },
+  })
+    .then(response.send(true))
+    .catch((error) =>
+      res.status(error.errno).send({
+        message: error.message,
+      })
+    );
 });
 
 app.listen({ port }, () => {

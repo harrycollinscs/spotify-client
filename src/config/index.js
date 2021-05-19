@@ -9,7 +9,7 @@ export const client_id = 'a4f47b9ec311413bae51f77838af3e3d';
 export const client_secret = 'f05017551a5f4161b2473802f971f172';
 export const redirect_uri = 'http://localhost:3000/';
 export const scope = 
-  'user-read-private user-read-email user-read-recently-played user-top-read playlist-read-private playlist-read-collaborative user-library-read user-modify-playback-state';
+  'user-read-private user-read-email user-read-recently-played user-top-read playlist-read-private playlist-read-collaborative user-library-read user-modify-playback-state user-read-playback-state';
 export const full_auth_url =
     base_auth_url +
     querystring.stringify({
