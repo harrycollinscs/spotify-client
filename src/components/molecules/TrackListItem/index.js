@@ -70,6 +70,8 @@ const getTrack = (track) => {
 const TrackListItem = ({ track, offset, playlistId = null, albumId = null }) => {
   const { name, artists, album } = getTrack(track);
 
+  const imageUrl = album.images.length ? album.images[0].url : 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081';
+
   const playPayload = {
     type: playlistId ? 'playlist' : 'album',
     id: playlistId ? playlistId : albumId,
@@ -82,12 +84,14 @@ const TrackListItem = ({ track, offset, playlistId = null, albumId = null }) => 
     })
     .join(", ");
 
+    console.log(album)
+
   return (
     <div>
       <Item>
 
       <div style={{position: 'relative'}}>
-        <StyledImage src={album.images[0].url} />
+        <StyledImage src={imageUrl} />
         <StyledImageOverlay onClick={() => playTrack(playPayload)} >
           <FontAwesomeIcon icon={faPlay} style={IconStyle} />
         </StyledImageOverlay>
