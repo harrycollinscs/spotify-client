@@ -79,7 +79,7 @@ const NavigationBar = ({ links }) => {
     <StyledNavBar>
       <Link to="/" style={{ textDecoration: "none" }}>
         <BrandLogoContainer>
-          <StyledBrand>Statify</StyledBrand>
+          <StyledBrand>Reactify</StyledBrand>
           <FontAwesomeIcon icon={faCompactDisc} style={IconStyle} />
         </BrandLogoContainer>
       </Link>

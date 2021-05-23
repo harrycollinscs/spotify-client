@@ -3,24 +3,22 @@ import styled from "styled-components";
 import PlaylistCard from "../../molecules/PlaylistCard";
 import ClipLoader from "react-spinners/ClipLoader";
 
-const List = styled.ul`
-  list-style: none;
-  text-align: center;
-  padding: 40px 0px;
+const Container = styled.div`
+  padding: 20px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 `;
 
 const PlaylistList = ({ playlists }) => {
   return (
-    <>
-      <List>
+    
+    <Container>
         {playlists.map((playlist) => (
-          <li style={{ display: "inline-block", verticalAlign: "top" }}>
             <PlaylistCard playlist={playlist} />
-          </li>
         ))}
-      </List>
       {/* {true && <ClipLoader color={'blue'} loading={true} css={ true} size={20} />} */}
-    </>
+    </Container>
   );
 };
 

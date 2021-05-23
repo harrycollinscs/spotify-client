@@ -4,21 +4,21 @@ import store from "../../store";
 import { updateUserPlaylists } from "../../store/actions";
 
 export const getMyPlaylists = async (offset = 0) => {
-  const playlistsEndpoint = `${me_endpoint}/playlists`;
-  axios
-    .get(playlistsEndpoint, {
-      headers: {
-        Authorization: "Bearer " + store.getState().accessToken,
-      },
-      params: {
-        limit: 40,
-        offset: offset,
-      },
-    })
-    .then((res) => {
-      store.dispatch(updateUserPlaylists(res.data.items));
-      return res.data;
-    });
+  // const playlistsEndpoint = `${me_endpoint}/playlists`;
+  // axios
+  //   .get(playlistsEndpoint, {
+  //     headers: {
+  //       Authorization: "Bearer " + store.getState().accessToken,
+  //     },
+  //     params: {
+  //       limit: 30,
+  //       offset: offset,
+  //     },
+  //   })
+  //   .then((res) => {
+  //     store.dispatch(updateUserPlaylists(res.data.items));
+  //     return res.data;
+  //   });
 };
 
 export const playPlaylist = async (id) => {

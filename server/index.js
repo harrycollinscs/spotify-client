@@ -55,7 +55,9 @@ app.put("/playSong", function (req, response) {
       "Content-Type": "application/json",
     },
   })
-    .then(response.send(true))
+    .then((res) => {
+      console.log(res);
+      response.send(true)})
     .catch((error) =>
       res.status(error.errno).send({
         message: error.message,

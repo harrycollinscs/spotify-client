@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  background-color: #1db954;
+  background-color: ${props => props.primary ? '#1db954' : '#212121' };
   width: 200px;
   height: 50px;
   border-radius: 50px;
@@ -10,6 +10,6 @@ const StyledButton = styled.button`
   color: white;
 `;
 
-const CTA = ({ children, action }) => <StyledButton onClick={action}>{children}</StyledButton>;
+const CTA = ({ children, action, primary = true }) => <StyledButton primary={primary} onClick={action}>{children}</StyledButton>;
 
 export default CTA;
