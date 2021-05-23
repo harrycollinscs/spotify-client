@@ -32,7 +32,7 @@ class Playlists extends PureComponent {
   state = {
     loadedPlaylists: [],
     totalPlaylists: null,
-    loading: false,
+    loading: true,
   };
 
   componentDidMount() {
@@ -41,7 +41,7 @@ class Playlists extends PureComponent {
 
   loadPlaylists(offset) {
     const playlistsEndpoint = `${me_endpoint}/playlists`;
-    this.setState({ loading: true })
+    this.setState({ loading: true });
 
     axios
       .get(playlistsEndpoint, {
@@ -76,26 +76,33 @@ class Playlists extends PureComponent {
         <Hero title={this.locale.heroTitle} content={this.locale.heroContent} />
         <ContentContainer>
           <StyledTitle>Your playlists</StyledTitle>
-          {loadedPlaylists.length ? (
-            <PlaylistsContainer>
+
+          <PlaylistsContainer>
+            {loadedPlaylists.length && (
               <PlaylistList playlists={loadedPlaylists} />
+            )}
 
-              <ClipLoader color={'white'} loading={loading} css={true} size={40} />
+            <ClipLoader
+              color={"white"}
+              loading={loading}
+              css={true}
+              size={40}
+            />
 
-              {!allPlaylistsLoaded && !loading && (
-                <CTA
-                  action={() =>
-                    this.loadPlaylists(this.state.loadedPlaylists.length)
-                  }
-                  primary={false}
-                >
-                  Load more
-                </CTA>
-              )}
-            </PlaylistsContainer>
-          ) : (
-            <p>No data available</p>
-          )}
+            {!allPlaylistsLoaded && !loading && (
+              <CTA
+                action={() =>
+                  this.loadPlaylists(this.state.loadedPlaylists.length)
+                }
+                primary={false}
+              >
+                Load more
+              </CTA>
+            )}
+  
+          </PlaylistsContainer>
+
+          {!loading && !loadedPlaylists.length && <p>No playlists found.</p>}
         </ContentContainer>
       </Page>
     );
