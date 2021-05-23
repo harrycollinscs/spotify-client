@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { PureComponent } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
 import styled from "styled-components";
 import { me_endpoint } from "../../../config";
 import store from "../../../store";
@@ -31,6 +32,7 @@ class Playlists extends PureComponent {
   state = {
     loadedPlaylists: [],
     totalPlaylists: null,
+    loading: false,
   };
 
   componentDidMount() {
@@ -39,6 +41,7 @@ class Playlists extends PureComponent {
 
   loadPlaylists(offset) {
     const playlistsEndpoint = `${me_endpoint}/playlists`;
+    this.setState({ loading: true })
 
     axios
       .get(playlistsEndpoint, {
@@ -54,6 +57,7 @@ class Playlists extends PureComponent {
         this.setState({
           loadedPlaylists: [...this.state.loadedPlaylists, ...res.data.items],
           totalPlaylists: res.data.total,
+          loading: false,
         });
       });
   }
@@ -64,18 +68,21 @@ class Playlists extends PureComponent {
   };
 
   render() {
-    const playlists = this.state.loadedPlaylists;
-    const allPlaylistsLoaded = this.state.totalPlaylists === playlists.length;
+    const { loadedPlaylists, loading, totalPlaylists } = this.state;
+    const allPlaylistsLoaded = totalPlaylists === loadedPlaylists.length;
 
     return (
       <Page>
         <Hero title={this.locale.heroTitle} content={this.locale.heroContent} />
         <ContentContainer>
           <StyledTitle>Your playlists</StyledTitle>
-          {playlists.length ? (
+          {loadedPlaylists.length ? (
             <PlaylistsContainer>
-              <PlaylistList playlists={playlists} />
-              {!allPlaylistsLoaded && (
+              <PlaylistList playlists={loadedPlaylists} />
+
+              <ClipLoader color={'white'} loading={loading} css={true} size={40} />
+
+              {!allPlaylistsLoaded && !loading && (
                 <CTA
                   action={() =>
                     this.loadPlaylists(this.state.loadedPlaylists.length)
