@@ -44,7 +44,7 @@ const StyledImageOverlay = styled.div`
   opacity: 0;
   position: absolute;
   bottom: 0;
-  transition: .5s ease;
+  transition: 0.5s ease;
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -67,15 +67,22 @@ const getTrack = (track) => {
   return track.track ? track.track : track;
 };
 
-const TrackListItem = ({ track, offset, playlistId = null, albumId = null }) => {
+const TrackListItem = ({
+  track,
+  offset,
+  playlistId = null,
+  albumId = null,
+}) => {
   const { name, artists, album } = getTrack(track);
 
-  const imageUrl = album.images.length ? album.images[0].url : 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081';
+  const imageUrl = album.images.length
+    ? album.images[0].url
+    : "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081";
 
   const playPayload = {
-    type: playlistId ? 'playlist' : 'album',
+    type: playlistId ? "playlist" : "album",
     id: playlistId ? playlistId : albumId,
-    offset: offset
+    offset: offset,
   };
 
   const allArtists = artists
@@ -84,18 +91,15 @@ const TrackListItem = ({ track, offset, playlistId = null, albumId = null }) => 
     })
     .join(", ");
 
-    console.log(album)
-
   return (
     <div>
       <Item>
-
-      <div style={{position: 'relative'}}>
-        <StyledImage src={imageUrl} />
-        <StyledImageOverlay onClick={() => playTrack(playPayload)} >
-          <FontAwesomeIcon icon={faPlay} style={IconStyle} />
-        </StyledImageOverlay>
-      </div>
+        <div style={{ position: "relative" }}>
+          <StyledImage src={imageUrl} />
+          <StyledImageOverlay onClick={() => playTrack(playPayload)}>
+            <FontAwesomeIcon icon={faPlay} style={IconStyle} />
+          </StyledImageOverlay>
+        </div>
 
         <ContentContainer>
           <Song>{name}</Song>

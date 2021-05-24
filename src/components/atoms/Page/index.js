@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Player from "../../molecules/Player";
 import NavigationBar from "../../organisms/NavBar";
 
 const Container = styled.div`
@@ -7,11 +8,19 @@ const Container = styled.div`
   flex-direction; row;
 `;
 
+const PlayerContainer = styled.div`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+`;
+
 const StyledDiv = styled.div`
   overflow-y: scroll;
   height: 100vh;
   width; 85vw;
-  background-color: ${props => props.dark ? 'black' : 'white'};
+  padding: 0px 0px 50px 0px;
+  background-color: ${(props) => (props.dark ? "black" : "white")};
   position: relative;
 `;
 
