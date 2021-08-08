@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Templates/Playlist Should match snapshot 1`] = `
+<Page>
+  <Hero
+    withBackButton={true}
+  />
+  <styled.div>
+    <styled.h2>
+      Tracks
+    </styled.h2>
+    <p
+      style={
+        Object {
+          "color": "black",
+        }
+      }
+    >
+      No tracks found
+    </p>
+  </styled.div>
+</Page>
+`;

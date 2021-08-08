@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atoms/Page Should match snapshot 1`] = `
+<styled.div>
+  <NavigationBar
+    links={
+      Array [
+        Object {
+          "route": "/songs",
+          "title": "Songs",
+        },
+        Object {
+          "route": "/artists",
+          "title": "Artists",
+        },
+        Object {
+          "route": "/playlists",
+          "title": "Playlists",
+        },
+      ]
+    }
+  />
+  <styled.div
+    dark={false}
+  />
+</styled.div>
+`;

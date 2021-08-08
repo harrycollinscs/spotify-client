@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Molecules/Hero Should match snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div
+      withBack={false}
+    >
+      <styled.h1 />
+      <styled.p />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

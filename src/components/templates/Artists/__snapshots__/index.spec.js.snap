@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Templates/Artists Should match snapshot 1`] = `
+<Page>
+  <Hero
+    content="Here you can find your recently played artists and your most played artists"
+    title="Artists"
+  />
+</Page>
+`;

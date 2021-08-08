@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Molecules/PlaylistCard Should match snapshot 1`] = `
+<Link
+  style={
+    Object {
+      "textDecoration": "none",
+    }
+  }
+  to="/playlists/3qQoF3PaRtg1iPUHKRzjEX"
+>
+  <styled.div>
+    <styled.div>
+      <styled.img
+        src="https://mosaic.scdn.co/640/ab67616d0000b2732090f4f6cc406e6d3c306733ab67616d0000b27352c75ed37313b889447011efab67616d0000b27364442a4144ef18be67b37b37ab67616d0000b273ea9bbdf9f1433e68c7dffbad"
+      />
+      <styled.div>
+        <GreenPlayButton
+          action={[Function]}
+        />
+      </styled.div>
+    </styled.div>
+    <styled.div>
+      <styled.p>
+        🚿
+      </styled.p>
+      <styled.p>
+        By 
+        woodpush3r
+      </styled.p>
+    </styled.div>
+  </styled.div>
+</Link>
+`;

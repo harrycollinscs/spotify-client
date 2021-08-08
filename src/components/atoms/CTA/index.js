@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledButton = styled.button`
+export const StyledButton = styled.button`
   background-color: ${props => props.primary ? '#1db954' : '#212121' };
   width: 200px;
   height: 50px;

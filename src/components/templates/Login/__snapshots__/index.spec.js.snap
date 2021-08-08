@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Templates/Login Should match snapshot 1`] = `
+<Page
+  darkBackground={true}
+  withNavigation={false}
+>
+  <styled.div>
+    <styled.img
+      src={null}
+    />
+    <styled.h1>
+      Hey there! Sign in to see more.
+    </styled.h1>
+  </styled.div>
+  <styled.div>
+    <NavLink
+      to="/login"
+    >
+      <CTA
+        action={[Function]}
+      >
+        Log in with Spotify
+      </CTA>
+    </NavLink>
+  </styled.div>
+</Page>
+`;

@@ -1,0 +1,46 @@
+{
+  "collaborative": false,
+  "description": "",
+  "external_urls": {
+    "spotify": "https://open.spotify.com/playlist/3qQoF3PaRtg1iPUHKRzjEX"
+  },
+  "href": "https://api.spotify.com/v1/playlists/3qQoF3PaRtg1iPUHKRzjEX",
+  "id": "3qQoF3PaRtg1iPUHKRzjEX",
+  "images": [
+    {
+      "height": 640,
+      "url": "https://mosaic.scdn.co/640/ab67616d0000b2732090f4f6cc406e6d3c306733ab67616d0000b27352c75ed37313b889447011efab67616d0000b27364442a4144ef18be67b37b37ab67616d0000b273ea9bbdf9f1433e68c7dffbad",
+      "width": 640
+    },
+    {
+      "height": 300,
+      "url": "https://mosaic.scdn.co/300/ab67616d0000b2732090f4f6cc406e6d3c306733ab67616d0000b27352c75ed37313b889447011efab67616d0000b27364442a4144ef18be67b37b37ab67616d0000b273ea9bbdf9f1433e68c7dffbad",
+      "width": 300
+    },
+    {
+      "height": 60,
+      "url": "https://mosaic.scdn.co/60/ab67616d0000b2732090f4f6cc406e6d3c306733ab67616d0000b27352c75ed37313b889447011efab67616d0000b27364442a4144ef18be67b37b37ab67616d0000b273ea9bbdf9f1433e68c7dffbad",
+      "width": 60
+    }
+  ],
+  "name": "🚿",
+  "owner": {
+    "display_name": "woodpush3r",
+    "external_urls": {
+      "spotify": "https://open.spotify.com/user/woodpush3r"
+    },
+    "href": "https://api.spotify.com/v1/users/woodpush3r",
+    "id": "woodpush3r",
+    "type": "user",
+    "uri": "spotify:user:woodpush3r"
+  },
+  "primary_color": null,
+  "public": true,
+  "snapshot_id": "MzgsNDAxYjE0MTFkZjExOGQzMWQ2MTBkY2FiODY0NTRmNDZjY2E1ZjBjYQ==",
+  "tracks": {
+    "href": "https://api.spotify.com/v1/playlists/3qQoF3PaRtg1iPUHKRzjEX/tracks",
+    "total": 11
+  },
+  "type": "playlist",
+  "uri": "spotify:playlist:3qQoF3PaRtg1iPUHKRzjEX"
+}

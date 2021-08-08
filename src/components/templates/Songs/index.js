@@ -16,7 +16,6 @@ const StyledTitle = styled.h2`
 
 class Songs extends PureComponent {
   componentDidMount() {
-    const { userTopTracks } = this.props;
     getMyTopTracks();
   }
 
@@ -27,6 +26,7 @@ class Songs extends PureComponent {
 
   render() {
     const { userTopTracks } = this.props;
+
     return (
       <Page>
         <Hero title={this.locale.heroTitle} content={this.locale.heroContent} />

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Molecules/Player Should match snapshot 1`] = `
+<SpotifyWebPlayer
+  autoPlay={false}
+  callback={[Function]}
+  magnifySliderOnHover={true}
+  name="Spotify Web Player"
+  showSaveIcon={false}
+  styles={
+    Object {
+      "activeColor": "#fff",
+      "bgColor": "rgb(0,0,0)",
+      "color": "#fff",
+      "height": "50px",
+      "loaderColor": "#fff",
+      "sliderColor": "#1db954",
+      "trackArtistColor": "#ccc",
+      "trackNameColor": "#fff",
+    }
+  }
+  syncExternalDevice={true}
+  syncExternalDeviceInterval={5}
+  token={null}
+  uris={
+    Array [
+      "spotify:artist:6HQYnRM4OzToCYPpVBInuU",
+    ]
+  }
+/>
+`;

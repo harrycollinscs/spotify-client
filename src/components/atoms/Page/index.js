@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Player from "../../molecules/Player";
 import NavigationBar from "../../organisms/NavBar";
 
 const Container = styled.div`

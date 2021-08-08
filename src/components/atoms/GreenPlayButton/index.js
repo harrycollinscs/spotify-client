@@ -3,7 +3,7 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
-const IconContainer = styled.div`
+export const IconContainer = styled.div`
   height: 40px;
   width: 40px;
   border-radius: 40px;

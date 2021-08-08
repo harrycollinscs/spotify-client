@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Templates/Playlists Should match snapshot 1`] = `
+<Page>
+  <Hero
+    content="Here you can find the playlists you listen to most often"
+    title="Playlists"
+  />
+  <styled.div>
+    <styled.h2>
+      Your playlists
+    </styled.h2>
+    <styled.div>
+      0
+      <Loader
+        color="white"
+        css={true}
+        loading={true}
+        size={40}
+      />
+    </styled.div>
+  </styled.div>
+</Page>
+`;

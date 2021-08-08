@@ -8,7 +8,7 @@ const locale = {
     "Here you can find your recently played artists and your most played artists",
 }
 
-const Artists = (props) => (
+const Artists = () => (
     <Page>
       <Hero title={locale.heroTitle} content={locale.heroContent}/>
     </Page>
