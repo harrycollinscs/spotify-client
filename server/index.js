@@ -45,8 +45,6 @@ app.put("/playSong", function (req, response) {
     position_ms: 0,
   };
 
-  console.log(context_uri);
-
   fetch(endpoint, {
     method: "put",
     body: JSON.stringify(body),
