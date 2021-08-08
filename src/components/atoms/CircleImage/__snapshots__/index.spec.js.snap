@@ -1,3 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Atoms/CircleImage Should match snapshot 1`] = `<styled.img />`;
+exports[`Atoms/CircleImage Should match snapshot 1`] = `
+<styled.img
+  dimensions="50px"
+  src="https://i.scdn.co/image/ab6761610000e5eb3ef779aa0d271adb2b6a3ded"
+/>
+`;

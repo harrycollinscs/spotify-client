@@ -2,13 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledImage = styled.img`
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
+  width: ${(props) => props.dimensions};
+  height: ${(props) => props.dimensions};
+  border-radius: ${(props) => props.dimensions};
   border: 1px solid white;
   margin: 0px 30px;
 `;
 
-const CircleImage = ({ url }) => <StyledImage src={url} />;
+const CircleImage = ({ url, size = "small" }) => {
+  const dimensions = size === "medium" ? '100px' : size === "large" ? '200px' : '50px';
+
+  return (
+    <StyledImage dimensions={dimensions} src={url} />
+  )
+};
 
 export default CircleImage;

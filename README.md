@@ -20,3 +20,10 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 # Running node server
 
 ### `cd server && npm run start`
+
+# Storybook
+
+### `npm run storybook`
+
+Open [http://localhost:6006](http://localhost:6006) to view and manipulate individual components in browser.
+

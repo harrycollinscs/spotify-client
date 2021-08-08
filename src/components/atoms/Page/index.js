@@ -7,13 +7,6 @@ const Container = styled.div`
   flex-direction; row;
 `;
 
-const PlayerContainer = styled.div`
-  position: fixed;
-  top: 0;
-  width: 100%;
-  margin: 0;
-`;
-
 const StyledDiv = styled.div`
   overflow-y: scroll;
   height: 100vh;
