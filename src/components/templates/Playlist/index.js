@@ -44,12 +44,12 @@ class Playlist extends PureComponent {
     const playlist = this.state.playlist;
 
     return (
-      <Page>
+      <Page darkBackground={false}>
         <Hero title={playlist?.name} content={playlist?.description} withBackButton={true} />
         <ContentContainer>
           <StyledTitle>Tracks</StyledTitle>
           {this.state.playlist ? (
-            <TrackList tracks={playlist.tracks.items} playlistId={playlist.id}/>
+            <TrackList tracks={playlist.tracks.items} playlistId={playlist.id} darkMode={false}/>
           ) : (
             <p style={{ color: "black" }}>No tracks found</p>
           )}

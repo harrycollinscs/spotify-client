@@ -5,6 +5,7 @@ import { full_auth_url } from "../../../config";
 import CTA from "../../atoms/CTA";
 import Page from "../../atoms/Page";
 import VinylImage from "../../../resources/images/vinyls.png";
+import SpotifyBanner from "../../../resources/images/SpotifyBanner.png";
 
 const StyledButtonContainer = styled.div`
   align-items: center;
@@ -30,24 +31,29 @@ const StyledHeroText = styled.h1`
 
 const StyledImage = styled.img`
   width: 100vw;
-  height: 40vh;
-  opacity: 0.75;
+  height: 70vh;
+  opacity: 1;
 `;
 
 const ButtonAction = () => {
   window.location.href = full_auth_url;
 };
 
+const locale = {
+  welcomeText: "Hey there! Sign in to see more.",
+  loginButton: 'Log in with Spotify',
+};
+
 const Login = () => (
   <Page withNavigation={false} darkBackground={true}>
     <Container>
-      <StyledImage src={VinylImage} />
-      <StyledHeroText>Hey there! Sign in to see more.</StyledHeroText>
+      <StyledImage src={SpotifyBanner} />
+      {/* <StyledHeroText>{locale.welcomeText}</StyledHeroText> */}
     </Container>
 
     <StyledButtonContainer>
       <NavLink to={"/login"}>
-        <CTA action={ButtonAction}>Log in with Spotify</CTA>
+        <CTA action={ButtonAction}>{locale.loginButton}</CTA>
       </NavLink>
     </StyledButtonContainer>
   </Page>

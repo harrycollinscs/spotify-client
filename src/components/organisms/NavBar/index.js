@@ -1,20 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
-import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
+import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CircleImage from "../../atoms/CircleImage";
 import store from "../../../store";
 
 const StyledNavBar = styled.nav`
-  width: 15vw;
-  height: 100vh;
+  width: 100vw;
+  height: 8vh;
   padding: 20px 0px;
-  float: left;
   background-color: #000;
   align-items: center;
   text-align: center;
   z-index: 1000;
+  display: flex;
+  position: fixed;
+  top: 0;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 const BrandLogoContainer = styled.span`
@@ -26,7 +30,7 @@ const BrandLogoContainer = styled.span`
   padding: 10px;
 `;
 
-const StyledBrand = styled.h2`
+const StyledBrand = styled.h3`
   color: white;
   align-self: center;
   font-weight: bold;
@@ -37,6 +41,8 @@ const StyledNavLinks = styled.div`
   margin: 30px 0px;
   text-align: flex-start;
   padding: 0px;
+  display: flex;
+  flex-direction: row;
 `;
 
 const StyledListItem = styled.div`
@@ -48,10 +54,6 @@ const StyledListItem = styled.div`
 const IconContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
-  position: absolute;
-  bottom: 0;
-  padding: 20px;
-  width: 15vw;
 `;
 
 const NavLinkActiveStyle = {
@@ -79,8 +81,8 @@ const NavigationBar = ({ links }) => {
     <StyledNavBar>
       <Link to="/" style={{ textDecoration: "none" }}>
         <BrandLogoContainer>
-          <StyledBrand>Reactify</StyledBrand>
-          <FontAwesomeIcon icon={faCompactDisc} style={IconStyle} />
+          <StyledBrand>Spotify</StyledBrand>
+          <FontAwesomeIcon icon={faSpotify} style={IconStyle} />
         </BrandLogoContainer>
       </Link>
 

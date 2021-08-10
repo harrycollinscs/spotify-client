@@ -2,13 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import NavigationBar from "../../organisms/NavBar";
 
-const Container = styled.div`
-  display; flex:
-  flex-direction; row;
-`;
-
 const StyledDiv = styled.div`
   overflow-y: scroll;
+  margin-top: ${(props) => (props.withNavigation ? '8vh' : '0')};
   height: 100vh;
   width; 85vw;
   padding: 0px 0px 50px 0px;
@@ -32,12 +28,10 @@ const navigationLinks = [
 ];
 
 const Page = ({ children, withNavigation = true, darkBackground = false }) => (
-  <Container>
+  <StyledDiv dark={darkBackground} withNavigation={withNavigation}>
     {withNavigation && <NavigationBar links={navigationLinks} />}
-    <StyledDiv dark={darkBackground}>
-      {children}
-    </StyledDiv>
-  </Container>
+    {children}
+  </StyledDiv>
 );
 
 export default Page;

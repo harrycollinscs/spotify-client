@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Atoms/Page Should match snapshot 1`] = `
-<styled.div>
+<styled.div
+  dark={false}
+  withNavigation={true}
+>
   <NavigationBar
     links={
       Array [
@@ -19,9 +22,6 @@ exports[`Atoms/Page Should match snapshot 1`] = `
         },
       ]
     }
-  />
-  <styled.div
-    dark={false}
   />
 </styled.div>
 `;

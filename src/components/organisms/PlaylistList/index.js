@@ -6,7 +6,7 @@ const Container = styled.div`
   padding: 20px;
   text-align: left;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
 `;
 
 const PlaylistList = ({ playlists }) => (

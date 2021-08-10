@@ -2,12 +2,10 @@
 
 exports[`Templates/Home Should match snapshot 1`] = `
 <Page>
-  <Content>
-    <p>
-      Hey, 
-      TestUsername
-      !
-    </p>
-  </Content>
+  <Hero
+    content="Welcome back!"
+    title="Hey, TestUsername"
+    withBackButton={false}
+  />
 </Page>
 `;

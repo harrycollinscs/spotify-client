@@ -9,9 +9,6 @@ exports[`Templates/Login Should match snapshot 1`] = `
     <styled.img
       src={null}
     />
-    <styled.h1>
-      Hey there! Sign in to see more.
-    </styled.h1>
   </styled.div>
   <styled.div>
     <NavLink

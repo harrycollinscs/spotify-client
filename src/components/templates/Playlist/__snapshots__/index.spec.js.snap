@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Templates/Playlist Should match snapshot 1`] = `
-<Page>
+<Page
+  darkBackground={false}
+>
   <Hero
     withBackButton={true}
   />
