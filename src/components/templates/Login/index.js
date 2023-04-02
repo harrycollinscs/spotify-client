@@ -36,6 +36,7 @@ const StyledImage = styled.img`
 `;
 
 const ButtonAction = () => {
+  console.log(full_auth_url)
   window.location.href = full_auth_url;
 };
 

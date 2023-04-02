@@ -18,10 +18,6 @@ const navigationLinks = [
     route: "/songs",
   },
   {
-    title: "Artists",
-    route: "/artists",
-  },
-  {
     title: "Playlists",
     route: "/playlists",
   },
